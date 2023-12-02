@@ -9,13 +9,13 @@ for input in inputs:
 
     for i in range(len(input)):
 
-        if(input[i] in "0123456789"):
+        if(input[i] in "123456789"):
             number += input[i]
             break
 
     for i in range(len(input)-1,-1,-1):
 
-        if(input[i] in "0123456789"):
+        if(input[i] in "123456789"):
             number += input[i]
             break
 
