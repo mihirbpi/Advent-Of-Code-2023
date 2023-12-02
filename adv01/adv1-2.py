@@ -15,11 +15,9 @@ for input in inputs:
         if (num_word in input):
             nums_in_input.append((num_word, input.index(num_word)))
             nums_in_input.append((num_word, len(input)-"".join(reversed(input)).index("".join(reversed(num_word)))))
-
-    nums_in_input.sort(key=lambda x : x[1]) 
-
-    num1 = nums_in_input[0][0]
-    num2 = nums_in_input[-1][0]
+            
+    num1 = min(nums_in_input, key=lambda x : x[1])[0]
+    num2 = max(nums_in_input, key=lambda x : x[1])[0]
 
     if (num1 in num_words):
         num1 = num_words[num1]
