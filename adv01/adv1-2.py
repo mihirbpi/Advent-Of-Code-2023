@@ -10,12 +10,12 @@ for input in inputs:
     number = ""
     nums_in_input = []
 
-    for num_word in (list(num_words.keys()) + list(num_words.values())):
+    for num in (list(num_words.keys()) + list(num_words.values())):
 
-        if (num_word in input):
-            nums_in_input.append((num_word, input.index(num_word)))
-            nums_in_input.append((num_word, len(input)-"".join(reversed(input)).index("".join(reversed(num_word)))))
-            
+        if (num in input):
+            nums_in_input.append((num, input.index(num)))
+            nums_in_input.append((num, len(input)-"".join(reversed(input)).index("".join(reversed(num)))))
+
     num1 = min(nums_in_input, key=lambda x : x[1])[0]
     num2 = max(nums_in_input, key=lambda x : x[1])[0]
 
