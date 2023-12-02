@@ -17,9 +17,13 @@ for id in range(len(games)):
 
             if (int(count) > num_cubes_dict[color_name]):
                 possible = False
+                break
+            
+        if (not possible):
+            break
 
     possible_count += (1 + id if possible else 0)
-    
+
 print(possible_count)
 
 
