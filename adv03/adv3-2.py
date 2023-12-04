@@ -36,7 +36,6 @@ for i in range(len(rows)):
             j += 1
 
 answer = 0
-print(number_dict)
 
 for i, j in grid:
     numbers_around = set()
