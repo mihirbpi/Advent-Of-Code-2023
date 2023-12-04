@@ -39,7 +39,6 @@ answer = 0
 
 for i, j in grid:
     numbers_around = set()
-    gear = False
 
     if (grid[(i,j)] == "*"):
 
@@ -50,7 +49,6 @@ for i, j in grid:
                     numbers_around.add(number_dict[(x,y)])
                     
             if(len(numbers_around) == 2):
-                gear = True
                 answer += np.prod(list(numbers_around))
                 break
 print(answer)
