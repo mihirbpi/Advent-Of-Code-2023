@@ -12,7 +12,10 @@ faces = ["T", "J", "Q", "K", "A"]
 for i in range(len(faces)):
     label_to_val[faces[i]] = 10 + i 
 
-numeric_type = {0: "high_card", 1: "one pair", 2 : "two pair", 3 : "three of a kind", 4: "full house", 5: "four of a kind", 6: "five of a kind"}
+numeric_type = {0: "high_card", 1: "one pair", 
+                2: "two pair", 3: "three of a kind", 
+                4: "full house", 5: "four of a kind", 
+                6: "five of a kind"}
 
 def hand_to_type(hand):
     hand_dict = Counter(hand)
@@ -49,5 +52,5 @@ answer = 0
 
 for i in range(len(sorted_hands)):
     answer += int(sorted_hands[i][1]) * (i + 1)
-    
+
 print(answer)
