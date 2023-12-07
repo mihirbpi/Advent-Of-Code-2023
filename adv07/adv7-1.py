@@ -19,21 +19,14 @@ numeric_type = {0: "high_card", 1: "one pair",
 
 def hand_to_type(hand):
     hand_dict = Counter(hand)
-
-    if(sorted(list(hand_dict.values())) == [5]):
-        return 6, hand_dict
-    elif(sorted(list(hand_dict.values())) == [1, 4]):
-        return 5, hand_dict
-    elif(sorted(list(hand_dict.values())) == [2, 3]):
-        return 4, hand_dict
-    elif(sorted(list(hand_dict.values())) == [1, 1 ,3]):  
-        return 3, hand_dict
-    elif(sorted(list(hand_dict.values())) == [1, 2 ,2]):
-        return 2, hand_dict
-    elif(sorted(list(hand_dict.values())) == [1, 1, 1, 2]):
-        return 1, hand_dict
-    else:
-        return 0, hand_dict
+    amounts = [ [1, 1, 1, 1, 1], [1, 1, 1, 2], 
+                [1, 2, 2], [1, 1, 3],
+                [2, 3], [1, 4], [5] ]
+    
+    for i in range(len(amounts)):
+        
+        if(sorted(list(hand_dict.values())) == amounts[i]):
+            return i, hand_dict
 
 def convert_to_compare_same_type(h):
     res = ""
