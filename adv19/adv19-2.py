@@ -27,8 +27,7 @@ def num_accepted(ranges_list, workflow_name):
     total = 0
     rules = workflow_dict[workflow_name]
 
-    for i in range(len(rules)-1):
-        rule = rules[i]
+    for rule in rules[:-1]:
         condition, destination = rule.split(":")
         letter_index = ["x","m","a","s"].index(condition[0])
         sign = condition[1]
