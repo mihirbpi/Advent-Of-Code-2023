@@ -4,14 +4,14 @@ from collections import defaultdict, deque
 
 data = get_data(year=2023, day=21)
 grid = data.split("\n")
-grid_dict = defaultdict(str)
+grid_dict = {}
 start = None
 
 for i in range(len(grid)):
 
     for j in range(len(grid[0])):
         grid_dict[(i,j)] = grid[i][j]
-        
+
         if (grid[i][j] == "S"):
             start = (i,j)
 
@@ -39,7 +39,7 @@ while (len(queue) > 0):
 
         new_pos = (curr_pos[0]+dir[0], curr_pos[1]+dir[1])
 
-        if (grid_dict[new_pos] in ".S" and new_pos not in visited):
+        if (new_pos in grid_dict and grid_dict[new_pos] in ".S" and new_pos not in visited):
                 queue.append((new_pos, depth-1))
 
 print(len(answer))
