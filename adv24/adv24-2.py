@@ -17,11 +17,9 @@ for line in data.split("\n"):
 equations = []
 
 for i in range(3):
-    p, v = hailstones[i]
-    p1, p2, p3 = p
-    v1, v2, v3 = v
-    equations.append(sympy.Eq((p1-ps1)*(vs2-v2), (p2-ps2)*(vs1-v1)))
-    equations.append(sympy.Eq((p2-ps2)*(vs3-v3), (p3-ps3)*(vs2-v2)))
+    (p1, p2, p3), (v1, v2, v3) = hailstones[i]
+    equations.append(sympy.Eq( (p1 - ps1) * (vs2 - v2), (p2 - ps2) * (vs1 - v1)))
+    equations.append(sympy.Eq((p2 - ps2) * (vs3 - v3), (p3 - ps3) * (vs2 - v2)))
 
 answers = sympy.solve(equations)
 print(sum([answers[0][x] for x in [ps1, ps2, ps3]]))
